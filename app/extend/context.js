@@ -34,7 +34,7 @@ module.exports = {
           // 提示哪个参数没传
           return field + '必填!!!';
         }
-        return rules[field].error || firstError.message;
+        return rules[field].errorMsg || firstError.message;
       }
       // 正式服，不允许提示详细信息
       if (code === 'missing_field') {
