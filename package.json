@@ -1,5 +1,5 @@
 {
-  "name": "egg-validate",
+  "name": "@ht/egg-validate",
   "version": "2.0.2",
   "description": "validate plugin for egg",
   "eggPlugin": {
@@ -21,13 +21,13 @@
     "parameter": "^3.0.0"
   },
   "devDependencies": {
-    "autod": "^3.0.1",
-    "egg": "^1.15.2",
-    "egg-bin": "^4.8.1",
-    "egg-ci": "^1.8.0",
-    "egg-mock": "^3.18.0",
-    "eslint": "^5.2.0",
-    "eslint-config-egg": "^7.0.0"
+    "autod": "^3.1.1",
+    "egg": "^1.21.0",
+    "egg-bin": "^4.16.4",
+    "egg-ci": "^1.19.0",
+    "egg-mock": "^3.26.0",
+    "eslint": "^7.32.0",
+    "eslint-config-egg": "^9.0.0"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -41,7 +41,7 @@
     "autod": "autod"
   },
   "ci": {
-    "version": "6, 8, 10",
+    "version": "6, 8, 10, 12, 14",
     "license": true
   },
   "repository": {

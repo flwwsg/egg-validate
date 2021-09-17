@@ -25,4 +25,12 @@ module.exports = app => {
    * ```
    */
   app.validator = new Parameter(app.config.validate);
+  // 支持 json 类型
+  app.validator.addRule('json', (rule, value) => {
+    try {
+      JSON.parse(value);
+    } catch (err) {
+      return 'must be json string';
+    }
+  });
 };
