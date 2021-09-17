@@ -32,7 +32,7 @@ module.exports = {
         // 非正式服
         if (code === 'missing_field') {
           // 提示哪个参数没传
-          return field + '必填!!!';
+          return field + ' 必填!!!';
         }
         return rules[field].errorMsg || firstError.message;
       }
