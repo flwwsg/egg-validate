@@ -1,6 +1,6 @@
 {
   "name": "@ht/egg-validate",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "validate plugin for egg",
   "eggPlugin": {
     "name": "validate"
@@ -18,7 +18,7 @@
     "validate"
   ],
   "dependencies": {
-    "parameter": "^3.0.0"
+    "parameter": "^3.6.0"
   },
   "devDependencies": {
     "autod": "^3.1.1",
