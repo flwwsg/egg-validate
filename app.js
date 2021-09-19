@@ -61,6 +61,9 @@ module.exports = app => {
       // 格式不对
       return 'value not match';
     }
+    if (rule.len && value.length !== rule.len) {
+      return 'invalid length';
+    }
   },
   value => {
     return parseInt(value);
