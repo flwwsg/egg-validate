@@ -54,6 +54,10 @@ module.exports = app => {
       // 不能大于最大值
       return 'must lower than ' + rule.max;
     }
+    if (rule.format && !rule.format.test(value)) {
+      // 格式不对
+      return 'value not match';
+    }
   },
   value => {
     return parseInt(value);
