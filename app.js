@@ -50,6 +50,8 @@ module.exports = app => {
       return 'integer must bigger 0';
     }
   },
-  'int'
+  value => {
+    return parseInt(value);
+  }
   );
 };
