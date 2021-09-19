@@ -8,5 +8,9 @@ module.exports = function(app) {
     } catch (err) {
       return this.t('must be json string');
     }
-  });
+  },
+    true,
+    value => {
+      return JSON.parse(value);
+    });
 };

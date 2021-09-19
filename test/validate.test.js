@@ -154,4 +154,25 @@ describe('test/validate.test.js', () => {
         });
     });
   });
+
+  describe('addRule() biggerZero', () => {
+    it('should check custom rule ok', () => {
+      return app.httpRequest()
+        .post('/users.json')
+        .send({
+          username: 'foo@gmail.com',
+          password: '123456',
+          're-password': '123456',
+          biggerZero: '0',
+        })
+        .expect(422)
+        .expect(res => {
+          assert(res.body.code === 'invalid_param');
+          assert(res.body.message === 'Validation Failed');
+          assert.deepEqual(res.body.errors, [
+            { field: 'biggerZero', code: 'invalid', message: 'integer must bigger 0' },
+          ]);
+        });
+    });
+  });
 });

@@ -12,6 +12,10 @@ const createRule = {
     required: false,
     type: 'json'
   },
+  biggerZero: {
+    type: 'biggerZero',
+    required: false,
+  }
 };
 
 exports.create = function* () {
