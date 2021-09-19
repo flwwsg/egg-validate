@@ -54,4 +54,23 @@ module.exports = app => {
     return parseInt(value);
   }
   );
+  // 字符串表示的整数
+  app.validator.addRule('intString', (rule, value) => {
+    const v = parseInt(value);
+    if (isNaN(v)) {
+      return 'must integer';
+    }
+    if (rule.min && v < rule.min) {
+      // 不能小于最小值
+      return 'must bigger than ' + rule.min;
+    }
+    if (rule.max && v > rule.max) {
+      // 不能大于最大值
+      return 'must lower than ' + rule.max;
+    }
+  },
+  value => {
+    return parseInt(value);
+  }
+  );
 };
