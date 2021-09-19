@@ -42,6 +42,9 @@ module.exports = app => {
     });
   // 字符串表示的整数
   app.validator.addRule('intString', (rule, value) => {
+    if (rule.trim) {
+      value = value.trim();
+    }
     const v = parseInt(value);
     if (isNaN(v)) {
       return 'must integer';
