@@ -22,7 +22,7 @@ module.exports = {
     data = data || this.request.body;
     const errors = this.app.validator.validate(rules, data);
     if (errors) {
-      this.logger.error(`validate error for request ${data}, errors ${errors}`);
+      this.logger.error(`validate error for request ${JSON.stringify(data)}, errors ${JSON.stringify(errors)}`);
       // 只返回第一个错误
       const firstError = errors[0];
       const code = firstError.code;

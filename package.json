@@ -1,6 +1,6 @@
 {
   "name": "@ht/egg-validate",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "validate plugin for egg",
   "eggPlugin": {
     "name": "validate"
