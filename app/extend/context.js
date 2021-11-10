@@ -34,13 +34,19 @@ module.exports = {
           // 提示哪个参数没传
           return field + ' 必填!!!';
         }
-        return rules[field].errorMsg || firstError.message;
+        if (rules[field] && rules[field].errorMsg) {
+          return rules[field].errorMsg;
+        }
+        return firstError.message;
       }
       // 正式服，不允许提示详细信息
       if (code === 'missing_field') {
         return '参数错误';
       }
-      return rules[field].error || '参数错误';
+      if (rules[field]) {
+        return rules[field].error;
+      }
+      return '参数错误';
     }
     return '';
   },
