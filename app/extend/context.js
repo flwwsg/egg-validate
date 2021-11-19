@@ -43,7 +43,7 @@ module.exports = {
       if (code === 'missing_field') {
         return '参数错误';
       }
-      if (rules[field]) {
+      if (rules[field] && rules[field].error) {
         return rules[field].error;
       }
       return '参数错误';
