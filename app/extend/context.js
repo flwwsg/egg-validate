@@ -37,7 +37,7 @@ module.exports = {
         if (rules[field] && rules[field].errorMsg) {
           return rules[field].errorMsg;
         }
-        return firstError.message;
+        return `${field}字段错误: ${firstError.message}!!!`;
       }
       // 正式服，不允许提示详细信息
       if (code === 'missing_field') {
