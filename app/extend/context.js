@@ -22,7 +22,7 @@ module.exports = {
     data = data || this.request.body;
     const errors = this.app.validator.validate(rules, data);
     if (errors) {
-      this.logger.error(`validate error for request ${data}, errors ${errors}`);
+      this.logger.error(`validate error for request ${JSON.stringify(data)}, errors ${JSON.stringify(errors)}`);
       // 只返回第一个错误
       const firstError = errors[0];
       const code = firstError.code;
@@ -34,13 +34,19 @@ module.exports = {
           // 提示哪个参数没传
           return field + ' 必填!!!';
         }
-        return rules[field].errorMsg || firstError.message;
+        if (rules[field] && rules[field].errorMsg) {
+          return rules[field].errorMsg;
+        }
+        return `${field}字段错误: ${firstError.message}!!!`;
       }
       // 正式服，不允许提示详细信息
       if (code === 'missing_field') {
         return '参数错误';
       }
-      return rules[field].error || '参数错误';
+      if (rules[field] && rules[field].error) {
+        return rules[field].error;
+      }
+      return '参数错误';
     }
     return '';
   },

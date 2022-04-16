@@ -42,7 +42,7 @@ module.exports = app => {
     });
   // 字符串表示的整数
   app.validator.addRule('intString', (rule, value) => {
-    if (rule.trim) {
+    if (rule.trim && typeof value === 'string') {
       value = value.trim();
     }
     const v = parseInt(value);
