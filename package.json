@@ -38,7 +38,8 @@
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
-    "autod": "autod"
+    "autod": "autod",
+    "publishLocal": "npm publish --registry http://dev.wdj:4873"
   },
   "ci": {
     "version": "6, 8, 10, 12, 14",
